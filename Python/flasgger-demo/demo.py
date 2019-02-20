@@ -2,7 +2,22 @@ from flask import Flask, jsonify
 from flasgger import Swagger
 
 app = Flask(__name__)
-swagger = Swagger(app)
+template = {
+    "swagger": "2.0",
+    "info": {
+        "title": "My API",
+        "description": "API for Test",
+        "version": "0.0.1"
+    },
+    "host": "localhost:5000",  # overrides localhost:500
+    "basePath": "/",  # base bash for blueprint registration
+    "schemes": [
+        "http",
+        "https"
+    ],
+}
+
+swagger = Swagger(app, template=template)
 
 
 @app.route('/demo')
