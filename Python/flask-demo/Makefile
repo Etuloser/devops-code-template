@@ -9,7 +9,7 @@ up:
 down:
 	docker-compose down --volumes
 log:
-	docker logs 0f ${NAME}
+	docker logs -f ${NAME}
 
 exec:
 	docker exec -it ${NAME} sh
