@@ -6,7 +6,7 @@ RUN /bin/sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/reposit
     apk add --no-cache python3-dev curl && \
     rm -rf /var/cache/apk/*
 
-COPY ./requirements-base.txt .
+COPY ./requirements-pro.txt .
 
 RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install -r requirements-base.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -19,4 +19,4 @@ EXPOSE 5000
 
 WORKDIR /usr/local/src/flask-demo/
 
-CMD ["flask","run","-h","0.0.0.0"]
+CMD ["gunicorn","-w","4","-b","0.0.0.0","5000","manage:app"]
