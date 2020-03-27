@@ -19,4 +19,4 @@ EXPOSE 5000
 
 WORKDIR /usr/local/src/flask-demo/
 
-CMD ["gunicorn","-w","4","-b","0.0.0.0","5000","manage:app"]
+CMD ["gunicorn","-w","4","-b","0.0.0.0:5000","manage:app"]
