@@ -1,4 +1,4 @@
-NAME = "flaks-demo"
+NAME = "flask-demo"
 VERSION = "latest"
 .PHONY: build build-version up down
 build: build-version
