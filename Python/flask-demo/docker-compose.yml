@@ -3,6 +3,7 @@ services:
 
   backend:
     image: flask-demo:latest
+    container_name: flask-demo
     restart: always
     volumes:
       - "../flask-demo:/usr/local/src/flask-demo"
