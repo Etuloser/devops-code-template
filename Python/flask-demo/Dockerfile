@@ -9,7 +9,7 @@ RUN /bin/sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/reposit
 COPY ./requirements-pro.txt .
 
 RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip3 install -r requirements-base.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+    pip3 install -r requirements-pro.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ENV FLASK_APP=manage.py
 
