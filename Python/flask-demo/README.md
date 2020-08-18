@@ -8,6 +8,6 @@
 
 ```bash
 # 最小应用
-$ pip install requirements-base.txt
+$ pip install -r requirements-base.txt
 ```
 
